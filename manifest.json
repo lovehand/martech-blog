@@ -1,0 +1,10 @@
+{
+  "name": "Martech.blog",
+  "short_name": "Martech",
+  "description": "Marketing Technology Reviews, Comparisons and Buying Guides",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": []
+}

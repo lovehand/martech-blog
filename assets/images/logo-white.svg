@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-labelledby="t">
+  <title id="t">Martech.blog</title>
+  <rect x="4" y="6" width="52" height="52" rx="8" fill="#0067e6"/>
+  <path d="M15 47V17h6.5L30 31l8.5-14H45v30h-6.5V29.5L30 43l-8.5-13.5V47z" fill="#fff"/>
+  <rect x="44" y="40" width="12" height="18" fill="#ff6a1a"/>
+  <text x="70" y="44" font-family="Archivo, Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" font-size="32" font-weight="800" letter-spacing="-0.8" fill="#ffffff">Martech<tspan fill="#ff6a1a">.</tspan>blog</text>
+</svg>

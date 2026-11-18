@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&display=swap");
+
 /* ==========================================================
    Martech.blog global stylesheet
    Mobile first. Clean, fast, accessible.
@@ -5,20 +7,23 @@
 
 /* ---------- Design tokens ---------- */
 :root {
-  --c-ink: #0b1220;
-  --c-text: #334155;
-  --c-muted: #64748b;
-  --c-line: #e2e8f0;
+  --c-ink: #0a1a33;
+  --c-text: #2b3648;
+  --c-muted: #5d6b80;
+  --c-line: #dde3ec;
   --c-bg: #ffffff;
-  --c-soft: #f8fafc;
-  --c-tint: #eef2ff;
-  --c-brand: #4f46e5;
-  --c-brand-dark: #3730a3;
-  --c-accent: #0ea5e9;
+  --c-soft: #f4f6fa;
+  --c-tint: #e8f1ff;
+  --c-brand: #0067e6;
+  --c-brand-dark: #004fb3;
+  --c-accent: #ff6a1a;
+  --c-navy: #0a1a33;
+  --c-navy-2: #12284d;
   --c-good: #16a34a;
   --c-warn: #d97706;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-head: "Archivo", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;
@@ -328,3 +333,124 @@ tr:last-child td { border-bottom: 0; }
 .site-footer a { color: var(--c-text); text-decoration: none; }
 .site-footer a:hover { color: var(--c-brand); }
 .footer-bottom { margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--c-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); color: var(--c-muted); font-size: var(--fs-xs); }
+
+/* ==========================================================
+   THEME v2: publication look (navy, blue, orange accent)
+   Overrides earlier rules. No HTML changes needed.
+   ========================================================== */
+
+/* Headlines: condensed, bold, newsroom feel */
+h1, h2, h3, h4, .logo { font-family: var(--font-head); }
+h1 { font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-weight: 800; letter-spacing: -0.02em; }
+h3 { font-weight: 700; }
+a { color: var(--c-brand); }
+a:hover { color: var(--c-brand-dark); }
+:focus-visible { outline-color: var(--c-accent); }
+
+/* Top accent bar + navy header */
+body { border-top: 4px solid var(--c-accent); }
+.site-header {
+  background: var(--c-navy);
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--c-navy-2);
+}
+.logo { color: #fff; font-weight: 800; letter-spacing: -0.02em; }
+.logo span.dot { color: var(--c-accent); }
+.logo__mark { background: var(--c-brand); border-radius: 6px; }
+.nav a { color: #c9d4e5; font-weight: 600; }
+.nav a:hover, .nav a[aria-current="page"] { background: transparent; color: #fff; box-shadow: inset 0 -3px 0 var(--c-accent); border-radius: 0; }
+.nav-toggle { background: transparent; border-color: #2a3f63; color: #fff; }
+.nav.is-open { background: var(--c-navy); border-bottom-color: var(--c-navy-2); }
+.nav.is-open a[aria-current="page"], .nav.is-open a:hover { box-shadow: inset 3px 0 0 var(--c-accent); }
+.header-cta.btn--primary { background: var(--c-accent); color: #fff; }
+.header-cta.btn--primary:hover { background: #e85a0c; color: #fff; }
+
+/* Buttons */
+.btn { border-radius: 6px; }
+.btn--primary { background: var(--c-brand); color: #fff; }
+.btn--primary:hover { background: var(--c-brand-dark); color: #fff; }
+.btn--ghost { border-color: #c3cddb; }
+.btn--ghost:hover { border-color: var(--c-brand); color: var(--c-brand); }
+
+/* Eyebrows as section kickers */
+.eyebrow { color: var(--c-accent); letter-spacing: 0.1em; font-weight: 700; }
+
+/* Hero: deep navy band */
+.hero {
+  background:
+    radial-gradient(800px 380px at 90% 0%, rgba(0, 103, 230, 0.35), transparent 60%),
+    linear-gradient(180deg, var(--c-navy) 0%, var(--c-navy-2) 100%);
+  color: #c9d4e5;
+}
+.hero h1 { color: #fff; }
+.hero h1 em { background: none; -webkit-background-clip: initial; background-clip: initial; color: var(--c-accent); }
+.hero__lead { color: #c9d4e5; }
+.hero__trust { color: #9fb0c8; }
+.hero__trust li::before { color: var(--c-accent); }
+.hero .btn--primary { background: var(--c-accent); }
+.hero .btn--primary:hover { background: #e85a0c; }
+.hero .btn--ghost { background: transparent; color: #fff; border-color: #3a5480; }
+.hero .btn--ghost:hover { border-color: #fff; color: #fff; }
+.search { border-radius: 6px; border-color: transparent; }
+.hero-card { border-radius: 10px; border: 0; }
+.hero-card__label { color: var(--c-accent); }
+
+/* Inner page header */
+.page-hero { background: var(--c-navy); border-bottom: 4px solid var(--c-brand); color: #c9d4e5; }
+.page-hero h1 { color: #fff; }
+.page-hero p.lead { color: #c9d4e5; }
+.page-hero .breadcrumbs, .page-hero .breadcrumbs a { color: #9fb0c8; }
+.page-hero .breadcrumbs a:hover { color: #fff; }
+.page-hero .meta { color: #9fb0c8; }
+.page-hero .meta strong { color: #fff; }
+
+/* Section headings get a short accent rule */
+.section__head h2::after, .article h2::after {
+  content: ""; display: block; width: 48px; height: 4px;
+  background: var(--c-accent); margin-top: var(--space-3); border-radius: 2px;
+}
+
+/* Cards: crisp, editorial */
+.card { border-radius: 8px; border-top: 3px solid transparent; }
+.card:hover { border-color: var(--c-line); border-top-color: var(--c-brand); box-shadow: var(--shadow); }
+.card__icon { background: var(--c-tint); color: var(--c-brand); border-radius: 8px; }
+.card h3 a:hover { color: var(--c-brand); }
+.guide-card__top { background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-brand) 100%); height: 110px; }
+.tag { border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.7rem; padding: 3px 8px; }
+.tag--guide { background: #fff1e8; color: #c2410c; }
+.guide-card__top .tag--guide { background: var(--c-accent); color: #fff; }
+
+/* Trust list */
+.checklist li { border-radius: 8px; border-left: 4px solid var(--c-brand); }
+.checklist__num { background: var(--c-accent); }
+
+/* Article details */
+.callout { border-left-color: var(--c-accent); background: #fff8f3; border-color: #fde3d2; }
+.toc__inner { border-left-color: var(--c-accent); }
+.toc a:hover { color: var(--c-brand); }
+th { background: var(--c-navy); color: #fff; }
+.table-wrap { border-radius: 8px; }
+.steps li::before { background: var(--c-accent); color: #fff; }
+.faq summary::after { color: var(--c-accent); }
+.author-box { border-left: 4px solid var(--c-brand); border-radius: 8px; }
+.author-box__avatar { background: var(--c-brand); }
+
+/* Newsletter */
+.newsletter {
+  border-radius: 12px; background-color: var(--c-navy);
+  background-image: radial-gradient(600px 240px at 50% 0%, rgba(0, 103, 230, 0.45), transparent 70%);
+  border-bottom: 4px solid var(--c-accent);
+}
+.newsletter input { border-radius: 6px; background: #0f2242; border-color: #2a3f63; }
+.newsletter .btn--primary { background: var(--c-accent); color: #fff; }
+.newsletter .btn--primary:hover { background: #e85a0c; color: #fff; }
+
+/* Footer: navy */
+.site-footer { background: var(--c-navy); border-top: 4px solid var(--c-brand); color: #9fb0c8; }
+.site-footer .logo { color: #fff; }
+.site-footer h4 { color: #fff; }
+.site-footer a { color: #c9d4e5; }
+.site-footer a:hover { color: var(--c-accent); }
+.footer-brand p { color: #9fb0c8; }
+.footer-bottom { border-top-color: #22385c; color: #8193ad; }

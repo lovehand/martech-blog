@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root{
   --primary:#2563eb;
   --primary-dark:#1d4ed8;
-  --text:#374151;
-  --heading:#111827;
+  --dark:#111827;
+  --text:#4b5563;
+  --light:#f8fafc;
   --border:#e5e7eb;
-  --bg:#ffffff;
-  --light:#f9fafb;
+  --success:#10b981;
 }
 
 *{
@@ -14,11 +16,21 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  font-family:Inter,Arial,sans-serif;
+  font-family:'Inter',sans-serif;
   background:#fff;
   color:var(--text);
   line-height:1.8;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
 }
 
 header{
@@ -26,107 +38,195 @@ header{
   top:0;
   background:#fff;
   border-bottom:1px solid var(--border);
-  z-index:999;
+  z-index:1000;
 }
 
 .nav{
-  max-width:1200px;
-  margin:auto;
-  padding:18px 24px;
+  height:80px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
 
 .logo{
-  font-size:28px;
-  font-weight:800;
   text-decoration:none;
+  font-size:32px;
+  font-weight:800;
   color:var(--primary);
 }
 
 .menu a{
   text-decoration:none;
-  margin-left:20px;
-  color:var(--heading);
+  color:var(--dark);
+  margin-left:28px;
   font-weight:600;
 }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:50px 24px;
-}
-
 .hero{
-  padding:80px 20px;
-  text-align:center;
-  background:linear-gradient(
-      135deg,
-      #eff6ff,
-      #ffffff
+  padding:120px 0;
+  background:
+  linear-gradient(
+    135deg,
+    #eff6ff,
+    #ffffff
   );
 }
 
+.hero-content{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
 .hero h1{
-  font-size:54px;
-  color:var(--heading);
-  margin-bottom:20px;
+  font-size:64px;
+  line-height:1.15;
+  margin-bottom:25px;
+  color:var(--dark);
 }
 
 .hero p{
-  max-width:780px;
+  font-size:22px;
+  max-width:800px;
   margin:auto;
-  font-size:20px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:30px;
-  padding:14px 30px;
-  border-radius:8px;
+  padding:16px 32px;
+  border-radius:10px;
+  text-decoration:none;
+  margin:15px 10px;
+  font-weight:700;
+}
+
+.btn-primary{
   background:var(--primary);
   color:white;
+}
+
+.btn-secondary{
+  background:white;
+  border:1px solid var(--border);
+  color:var(--dark);
+}
+
+.section{
+  padding:90px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+  color:var(--dark);
+  font-size:42px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.stat{
+  text-align:center;
+  padding:30px;
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+
+.stat h3{
+  font-size:42px;
+  color:var(--primary);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+}
+
+.card{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:30px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.card h3{
+  color:var(--dark);
+  margin-bottom:15px;
+}
+
+.card a{
+  color:var(--primary);
   text-decoration:none;
   font-weight:700;
 }
 
-.section-title{
-  margin-bottom:35px;
-  color:var(--heading);
+.content{
+  max-width:950px;
+  margin:auto;
 }
 
-.card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:30px;
-  margin-bottom:25px;
+.content h2{
+  font-size:34px;
+  color:var(--dark);
+  margin:50px 0 20px;
 }
 
-.card:hover{
-  box-shadow:0 10px 35px rgba(0,0,0,.05);
+.content p{
+  margin-bottom:20px;
 }
 
-footer{
-  margin-top:80px;
-  background:#111827;
+.content ul{
+  margin-left:20px;
+}
+
+.content li{
+  margin-bottom:10px;
+}
+
+.footer{
+  background:#0f172a;
   color:white;
-  text-align:center;
-  padding:50px 20px;
+  padding:60px 0;
+  margin-top:100px;
 }
 
-footer a{
+.footer a{
   color:#93c5fd;
   text-decoration:none;
-  margin:0 10px;
 }
 
-ul{
-  padding-left:20px;
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:20px;
 }
 
-h1,h2,h3{
-  color:var(--heading);
+@media(max-width:768px){
+
+.hero h1{
+  font-size:42px;
 }
 
+.stats{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.menu{
+  display:none;
+}
+
+.section-title{
+  font-size:32px;
+}
+
+}

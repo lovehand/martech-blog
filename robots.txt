@@ -1,5 +1,6 @@
 User-agent: *
-
 Allow: /
+Disallow: /search/
+Disallow: /subscribe/
 
-Sitemap: https://martech.blog/sitemap.xml
+Sitemap: https://www.martech.blog/sitemap.xml

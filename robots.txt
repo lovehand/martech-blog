@@ -3,4 +3,5 @@ Allow: /
 Disallow: /search/
 Disallow: /subscribe/
 Sitemap: https://martech.blog/rss.xml
+Sitemap: https://rss.app/feeds/1bcela8JzEeCD2Dt.xml
 Sitemap: https://www.martech.blog/sitemap.xml

@@ -723,3 +723,20 @@ video{
 body{
   overflow-x:hidden;
 }
+
+.logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo-image{
+  display:block;
+  height:48px;
+  width:auto;
+}
+
+@media (max-width:768px){
+  .logo-image{
+    height:40px;
+  }
+}
